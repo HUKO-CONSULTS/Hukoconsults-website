@@ -1,11 +1,13 @@
 import Link from "next/link";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { SiteHeader } from "./components/SiteHeader";
 import { SiteFooter } from "./components/SiteFooter";
+import { InnovationField } from "./components/InnovationField";
 
 const services = [
-  ["01", "Software Engineering", "Robust web platforms, enterprise systems and APIs engineered for performance and scale."],
-  ["02", "Product & UX Design", "Research-led digital experiences that make complex ideas intuitive and memorable."],
-  ["03", "Cloud & DevOps", "Secure cloud foundations, automated delivery and infrastructure that grows with demand."],
+  { title: "Web & Mobile Apps", text: "We build fast, user-friendly web and mobile apps that work seamlessly across every device.", image: "/home-web-apps-v2.png" },
+  { title: "UX Design", text: "We turn complex ideas into simple, intuitive digital experiences.", image: "/home-ux-design-v2.png" },
+  { title: "Business Growth", text: "We help you improve sales, reach more customers and build a clear plan for growth.", image: "/service-sales.png" },
 ];
 
 export default function Home() {
@@ -13,62 +15,57 @@ export default function Home() {
     <main>
       <SiteHeader />
       <section className="hero">
-        <div className="hero-grid" /><div className="orb orb-one" /><div className="orb orb-two" />
+        <div className="hero-photo" aria-hidden="true" /><div className="hero-grid" />
+        <InnovationField />
         <div className="hero-copy">
-          <p className="eyebrow"><span /> Engineering the future</p>
-          <h1>Pioneering digital <em>innovation</em> for enterprise.</h1>
-          <p className="hero-lead">HukoConsults delivers high-performance software, intelligent products and modern cloud systems for organisations ready to lead.</p>
+          <p className="eyebrow"><span /> Welcome to HukoConsults</p>
+          <h1>Building intelligent <em>software</em> for ambitious businesses.</h1>
+          <p className="hero-lead">Huko Consults delivers custom software, digital experiences and scalable growth solutions.</p>
           <div className="hero-actions">
-            <Link className="button button-red" href="/contact">Start your project <span>↗</span></Link>
-            <Link className="text-link" href="/services">Our solutions <span>→</span></Link>
-          </div>
-        </div>
-        <div className="hero-console">
-          <div className="console-top"><span /><span /><span /><b>HUKO / SYSTEMS</b></div>
-          <div className="console-body">
-            <div className="pulse-ring"><div className="pulse-core">H</div></div>
-            <p><span>STATUS</span> READY TO BUILD</p><p><span>FOCUS</span> DIGITAL IMPACT</p><p><span>REGION</span> AFRICA → GLOBAL</p>
+            <Link className="button button-red" href="/contact">Be strategic. Build what’s next <ArrowUpRight size={17} /></Link>
+            <Link className="text-link" href="/services">Our solutions <ArrowRight size={16} /></Link>
           </div>
         </div>
         <div className="hero-foot"><span>Strategy</span><b>+</b><span>Experience</span><b>+</b><span>Technology</span></div>
       </section>
 
       <section className="trust-strip">
-        <p>Built for ambitious teams</p>
+        <p>Think. Build. Scale.</p>
         <div><strong>01</strong><span>Business-first<br />thinking</span></div>
-        <div><strong>02</strong><span>Senior technical<br />expertise</span></div>
+        <div><strong>02</strong><span>Technical<br />expertise</span></div>
         <div><strong>03</strong><span>End-to-end<br />delivery</span></div>
       </section>
 
       <section className="section services">
         <div className="section-heading">
-          <div><p className="eyebrow dark"><span /> Core capabilities</p><h2>Strategic solutions for a <em>digital-first world.</em></h2></div>
-          <p>We bring design, engineering and emerging technology together to solve high-value business challenges.</p>
+          <div><p className="eyebrow dark"><span /> Core capabilities</p><h2>Creating solutions for a <em>digital-first future.</em></h2></div>
+          <p>We combine design, technology and strategy to solve real business challenges.</p>
         </div>
         <div className="service-grid three">
-          {services.map(([number, title, text]) => (
-            <article className="service-card" key={number}>
-              <div className="service-number">{number}</div><div className="service-icon">⌁</div>
+          {services.map(({ title, text, image }) => (
+            <article className="service-card" key={title}>
+              <div className="home-service-image"><img src={image} alt={`${title} visual`} /></div>
               <h3>{title}</h3><p>{text}</p>
-              <Link href="/services">Explore capability <span>↗</span></Link>
+              <Link href="/services">Explore capability <ArrowUpRight size={16} /></Link>
             </article>
           ))}
         </div>
+        <div className="services-more"><Link className="button button-red" href="/services">More services <ArrowUpRight size={17} /></Link></div>
       </section>
 
       <section className="manifesto">
-        <div className="manifesto-visual"><div className="signal signal-a" /><div className="signal signal-b" /><div className="visual-label"><span>THE HUKO STANDARD</span><b>Precision-engineered<br />professionalism.</b></div></div>
+        <div className="manifesto-visual people-visual"><div className="signal signal-a" /><div className="signal signal-b" /><div className="visual-label"><span>THE HUKO STANDARD</span><b>Precision. Partnership.<br />Performance.</b></div></div>
         <div className="manifesto-copy">
           <p className="eyebrow"><span /> Why HukoConsults</p>
-          <h2>Built for momentum. <em>Designed for impact.</em></h2>
-          <p>We connect ambitious strategy with disciplined execution, giving our clients one accountable partner from opportunity to launch.</p>
+          <h2>Think. Build. Scale. <em>Results Over Promises.</em></h2>
+          <p>We partner with forward-thinking businesses to turn ideas into practical, scalable digital solutions.</p>
           <div className="principles"><div><b>Clarity first</b><span>Focused thinking and honest advice.</span></div><div><b>Built to last</b><span>Quality foundations that scale.</span></div><div><b>One team</b><span>True collaboration throughout.</span></div></div>
         </div>
       </section>
 
       <section className="page-cta">
-        <p className="eyebrow"><span /> Your next move</p><h2>Ready to engineer your <em>advantage?</em></h2>
-        <Link className="button light-button" href="/contact">Begin a project <span>↗</span></Link>
+        <p className="eyebrow"><span /> Your next move</p><h2>Ready to bring your ideas to life? <em>Let’s discuss your goals.</em></h2>
+        <Link className="button light-button" href="/contact">Begin a project <ArrowUpRight size={17} /></Link>
       </section>
       <SiteFooter />
     </main>

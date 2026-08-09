@@ -1,37 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://hukoconsults.com"),
   title: "HukoConsults — Technology Built for Momentum",
-  description:
-    "HukoConsults is a modern technology consultancy delivering software engineering, product design, cloud solutions, AI and automation.",
-  icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
+  description: "Huko Consults builds clear, useful digital products and growth solutions for ambitious businesses.",
+  icons: { icon: "/huko-logo.png", shortcut: "/huko-logo.png" },
+  openGraph: {
+    title: "HukoConsults — Technology Built for Momentum",
+    description: "African insight. Global execution. Digital products built for momentum.",
+    images: [{ url: "/og.png", width: 1776, height: 888, alt: "HukoConsults technology team" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "HukoConsults — Technology Built for Momentum",
+    description: "African insight. Global execution. Digital products built for momentum.",
+    images: ["/og.png"],
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body>
         {children}
       </body>
     </html>
