@@ -21,6 +21,6 @@ The finished website files are created in the `out` folder. Upload the contents 
 
 ## Contact form
 
-The form uses FormSubmit to deliver messages to `hukoconsults@gmail.com` without a backend. The first submitted form requires email activation from FormSubmit.
+The form uses FormSubmit to deliver messages to `info@hukoconsults.com` without a backend. The first submitted form requires email activation from FormSubmit.
 
 For a complete beginner guide, read `HukoConsults_Beginner_Guide.docx`.

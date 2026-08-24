@@ -10,14 +10,14 @@ export default function ContactPage() {
       <SiteHeader />
       <section className="inner-hero contact-hero">
         <div className="hero-grid" />
-        <InnovationField />
+        <InnovationField variant="contact" />
         <div><p className="eyebrow"><span /> Let’s build something useful</p><h1>Let’s build your<br /><em>next big idea.</em></h1><p>Tell us what you need. We will listen, make a clear plan and help you build it.</p></div>
       </section>
       <section className="contact contact-page">
         <div className="contact-intro">
           <p className="eyebrow"><span /> Contact us</p><h2>Talk with our <em>team.</em></h2><p>You can contact us with a new idea, a problem or a project. Choose the easiest way to reach us.</p>
           <div className="contact-direct">
-            <a href="mailto:hukoconsults@gmail.com"><small><Mail size={15} /> Email us</small>hukoconsults@gmail.com <ArrowUpRight size={16} /></a>
+            <a href="mailto:info@hukoconsults.com"><small><Mail size={15} /> Email us</small>info@hukoconsults.com <ArrowUpRight size={16} /></a>
             <a href="tel:0758033100"><small><Phone size={15} /> Call us</small>0758033100 <ArrowUpRight size={16} /></a>
             <a href="https://wa.me/256767625461" target="_blank" rel="noreferrer"><small><MessageCircle size={15} /> WhatsApp</small>+256 767 625 461 <ArrowUpRight size={16} /></a>
           </div>

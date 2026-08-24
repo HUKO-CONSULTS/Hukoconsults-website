@@ -21,7 +21,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="footer-column"><h3>Explore</h3><Link href="/">Home</Link><Link href="/services">Services</Link><Link href="/about">About us</Link><Link href="/contact">Get started</Link></div>
-        <div className="footer-column footer-contact"><h3>Get in touch</h3><a href="tel:0758033100"><Phone size={17} /> 0758033100</a><a href="https://wa.me/256767625461" target="_blank" rel="noreferrer"><MessageCircle size={17} /> +256 767 625 461</a><a href="mailto:hukoconsults@gmail.com"><Mail size={17} /> hukoconsults@gmail.com</a></div>
+        <div className="footer-column footer-contact"><h3>Get in touch</h3><a href="tel:0758033100"><Phone size={17} /> 0758033100</a><a href="https://wa.me/256767625461" target="_blank" rel="noreferrer"><MessageCircle size={17} /> +256 767 625 461</a><a href="mailto:info@hukoconsults.com"><Mail size={17} /> info@hukoconsults.com</a></div>
         <div className="footer-column"><h3>Visit us</h3><p className="footer-address"><MapPin size={18} /> Kampala, Uganda<br />Building for Africa and the world.</p><h3 className="footer-mini-title">Availability</h3><p>Monday–Friday<br />8:00 AM–6:00 PM EAT</p></div>
       </div>
       <div className="footer-bottom"><span>© 2026 HukoConsults. All rights reserved.</span></div>

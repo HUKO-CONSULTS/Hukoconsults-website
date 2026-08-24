@@ -16,7 +16,7 @@ export default function ServicesPage() {
     <main>
       <SiteHeader />
       <section className="inner-hero">
-        <div className="hero-grid" /><InnovationField />
+        <div className="hero-grid" /><InnovationField variant="services" />
         <div><p className="eyebrow"><span /> Capabilities and expertise</p><h1>Digital solutions<br />that work.</h1><p>We build clear, useful technology that helps your business move forward.</p></div>
       </section>
       <section className="capability-list immersive-services">

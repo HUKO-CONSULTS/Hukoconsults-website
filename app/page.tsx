@@ -19,7 +19,7 @@ export default function Home() {
         <InnovationField />
         <div className="hero-copy">
           <p className="eyebrow"><span /> Welcome to HukoConsults</p>
-          <h1>Building intelligent <em>software</em> for ambitious businesses.</h1>
+          <h1>Building intelligent<br /><em>software</em> for<br />ambitious businesses.</h1>
           <p className="hero-lead">Huko Consults delivers custom software, digital experiences and scalable growth solutions.</p>
           <div className="hero-actions">
             <Link className="button button-red" href="/contact">Be strategic. Build what’s next <ArrowUpRight size={17} /></Link>
