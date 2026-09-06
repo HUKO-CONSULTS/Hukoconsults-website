@@ -16,7 +16,6 @@ jobs:
         with:
           node-version: 22
           cache: npm
-          port: 21
       - name: Install packages
         run: npm ci
       - name: Build static website
@@ -27,5 +26,6 @@ jobs:
           server: ${{ secrets.NAMECHEAP_FTP_SERVER }}
           username: ${{ secrets.NAMECHEAP_FTP_USERNAME }}
           password: ${{ secrets.NAMECHEAP_FTP_PASSWORD }}
+          port: 21
           local-dir: ./out/
           server-dir: ./
