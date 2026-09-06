@@ -27,4 +27,4 @@ jobs:
           username: ${{ secrets.NAMECHEAP_FTP_USERNAME }}
           password: ${{ secrets.NAMECHEAP_FTP_PASSWORD }}
           local-dir: ./out/
-          server-dir: ./public_html/
+          server-dir: ./
