@@ -1,14 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
-  const active = (href: string) => pathname === href;
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  
+  const active = (href: string) => mounted && pathname === href;
   return (
     <nav className="nav-shell" aria-label="Main navigation">
       <Link className="brand" href="/" aria-label="HukoConsults home">
