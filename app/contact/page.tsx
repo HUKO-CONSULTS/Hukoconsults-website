@@ -18,7 +18,7 @@ export default function ContactPage() {
           <p className="eyebrow"><span /> Contact us</p><h2>Talk with our <em>team.</em></h2><p>You can contact us with a new idea, a problem or a project. Choose the easiest way to reach us.</p>
           <div className="contact-direct">
             <a href="mailto:info@hukoconsults.com"><small><Mail size={15} /> Email us</small>info@hukoconsults.com <ArrowUpRight size={16} /></a>
-            <a href="tel:0758033100"><small><Phone size={15} /> Call us</small>0758033100 <ArrowUpRight size={16} /></a>
+            <a href="tel:+256758033100"><small><Phone size={15} /> Call us</small>+256 758 033 100 <ArrowUpRight size={16} /></a>
             <a href="https://wa.me/256767625461" target="_blank" rel="noreferrer"><small><MessageCircle size={15} /> WhatsApp</small>+256 767 625 461 <ArrowUpRight size={16} /></a>
           </div>
         </div>
