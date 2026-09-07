@@ -173,10 +173,14 @@ h2 { font-size: clamp(42px, 5vw, 75px); line-height: .98; letter-spacing: -.055e
 .footer-column a { color:#e8f1f8; font-size:14px; display:flex; align-items:center; gap:10px; transition:.2s; }
 .footer-column a:hover { color:var(--red); transform:translateX(3px); }
 .footer-column svg { color:var(--red); flex:0 0 auto; }
-.footer-column .footer-mini-title { margin-top:22px; font-size:14px; }
-.footer-address { position:relative; padding-left:28px; margin-bottom:0; }
+.footer-column .footer-mini-title { margin-top:14px; font-size:14px; font-weight:normal; color:#e8f1f8; }
+.footer-address { position:relative; padding-left:28px; margin:0; font-size:14px; line-height:1.7; color:#e8f1f8; }
 .footer-address svg { position:absolute; left:0; top:4px; }
-.footer-address + h3.footer-mini-title { margin-top:28px; }
+.footer-address + h3.footer-mini-title { margin-top:16px; }
+.footer-address br { display: block; margin-top: 4px; }
+.footer-column > p { font-size:14px; color:#e8f1f8; line-height:1.7; margin:0; }
+.footer-visit h3:first-of-type { color:var(--red); font-size:20px; margin:0 0 9px; letter-spacing:-.02em; }
+.footer-visit .footer-mini-title { color:var(--red); }
 .footer-socials { display:flex; gap:12px; margin-top:28px; }
 .footer-socials a { width:44px; height:44px; display:grid; place-items:center; border-radius:50%; color:#fff; border:1px solid transparent; transition:.2s; }
 .footer-socials a:hover { transform:translateY(-3px); color:#fff; box-shadow:0 10px 24px rgba(0,0,0,.35); }
@@ -216,8 +220,8 @@ h2 { font-size: clamp(42px, 5vw, 75px); line-height: .98; letter-spacing: -.055e
 .capability-copy h2 { font-size: clamp(39px,4vw,61px); margin: 17px 0; }
 .capability-copy > p:not(.eyebrow) { color: #696e75; line-height: 1.7; max-width: 580px; }
 .capability-items { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 28px 0; }
-.capability-items span { color: #596067; font-size: 11px; display: flex; align-items: center; gap: 8px; }
-.capability-items svg { color: #22a989; flex: 0 0 auto; }
+.capability-items span { color: #596067; font-size: 11px; display: flex; align-items: center; gap: 10px; }
+.capability-items svg { color: var(--mint); flex: 0 0 auto; transform: scale(1.1); }
 .capability-items span::first-letter { color: var(--mint); }
 .outline-button { border: 1px solid #adb2b8; display: inline-flex; gap: 28px; padding: 13px 16px; text-transform: uppercase; letter-spacing: .1em; font-weight: 800; font-size: 9px; }
 .outline-button span { color: var(--red); }

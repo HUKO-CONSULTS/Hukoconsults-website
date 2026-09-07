@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight, CircleDot } from "lucide-react";
 import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
 import { InnovationField } from "../components/InnovationField";
@@ -28,7 +28,7 @@ export default function ServicesPage() {
             </div>
             <div className="capability-copy">
               <p className="eyebrow dark"><span /> {item.code}</p><h2>{item.title}</h2><p>{item.text}</p>
-              <div className="capability-items">{item.items.map((entry) => <span key={entry}><Check size={14} strokeWidth={2.5} />{entry}</span>)}</div>
+              <div className="capability-items">{item.items.map((entry) => <span key={entry}><CircleDot size={14} strokeWidth={2.5} />{entry}</span>)}</div>
               {item.project ? <a className="outline-button" href="https://bookbite.net/" target="_blank" rel="noreferrer">View BookBite live <ArrowUpRight size={15} /></a> : item.sales ? <a className="outline-button" href="https://wa.me/256767625461?text=Hello%20HukoConsults%2C%20I%20would%20like%20a%20free%20sales%20strategy%20call." target="_blank" rel="noreferrer">Book your free strategy call <ArrowUpRight size={15} /></a> : <Link className="outline-button" href="/contact">Explore solutions <ArrowUpRight size={15} /></Link>}
             </div>
           </article>
