@@ -194,7 +194,7 @@ export function ContactForm() {
         .contact-form input:focus,
         .contact-form textarea:focus {
           outline: none;
-          border-color: #e53e3e;
+          border-color: #2fa3f1;
           background: #ffffff;
           box-shadow: 0 0 0 4px rgba(229, 62, 62, 0.08);
         }
@@ -227,14 +227,14 @@ export function ContactForm() {
         }
 
         .button-red {
-          background: #dc2626;
+          background: #2fa3f1;
           color: white;
         }
 
         .button-red:hover:not(:disabled) {
-          background: #b91c1c;
+          background: #3986f3;
           transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(220, 38, 38, 0.25);
+          box-shadow: 0 8px 24px rgba(55, 133, 216, 0.25);
         }
 
         .button:disabled {
@@ -288,7 +288,7 @@ export function ContactForm() {
 
         .form-error-content h3 {
           font-size: 1.5rem;
-          color: #dc2626;
+          color: #2fa3f1;
           margin-bottom: 0.5rem;
         }
 
