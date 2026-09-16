@@ -5,7 +5,7 @@ import { SiteHeader } from "../components/SiteHeader";
 
 export const metadata: Metadata = {
   title: "Selected projects",
-  description: "See selected digital products and ecommerce websites delivered by Huko Consults, including The Hub UG and BookBite.",
+  description: "See selected digital products and ecommerce websites delivered by Huko Consults, including The Hub UG, BookBite and Nexus Computers.",
   alternates: { canonical: "/projects" },
 };
 
@@ -15,9 +15,8 @@ const projects = [
     type: "Ecommerce website",
     description:
       "A clear, mobile-ready online shop for genuine phones, laptops, audio and accessories in Kampala.",
-    image:
-      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1400&q=80",
-    alt: "Smartphone held in a hand against a city background",
+    image: "/project-the-hub-ug.png",
+    alt: "The Hub UG online store showing its latest smartphones",
     href: "https://thehub.ug/",
     tags: ["Ecommerce", "Product discovery", "Mobile-first"],
   },
@@ -30,6 +29,16 @@ const projects = [
     alt: "BookBite online bookstore homepage showing a featured book",
     href: "https://bookbite.net/",
     tags: ["Ecommerce", "Website build", "Customer experience"],
+  },
+  {
+    name: "Nexus Computers",
+    type: "Ecommerce website",
+    description:
+      "A product-focused online store that makes it simple to browse computers, smartphones and accessories.",
+    image: "/project-nexus-computers.png",
+    alt: "Nexus Computers online storefront with technology categories and featured products",
+    href: "https://nexuscomputers.ug/",
+    tags: ["Ecommerce", "Product catalogue", "Mobile-first"],
   },
 ];
 

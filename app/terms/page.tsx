@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { SiteHeader } from "../components/SiteHeader";
-import { SiteFooter } from "../components/SiteFooter";
+import { LegalDocument, type LegalClause } from "../components/LegalDocument";
 
 export const metadata: Metadata = {
   title: "Terms and conditions",
@@ -8,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/terms" },
 };
 
-const clauses = [
+const clauses: LegalClause[] = [
   {
     title: "Acceptance of terms",
     text: "By accessing or using this website, you agree to be bound by these terms and conditions. If you do not agree, please do not use this site.",
@@ -27,54 +26,18 @@ const clauses = [
   },
   {
     title: "Contact",
-    text: "Questions about these terms should be directed to info@hukoconsults.com.",
+    contact: true,
   },
 ];
 
 export default function TermsPage() {
   return (
-    <main>
-      <SiteHeader />
-      <section className="inner-hero">
-        <div className="hero-grid" />
-        <div>
-          <p className="eyebrow"><span /> Legal</p>
-          <h1>Terms &amp; conditions</h1>
-          <p>Terms for using the Huko Consults website and our services. Last updated: 14 September 2026.</p>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow dark"><span /> The specifics</p>
-            <h2>What you&rsquo;re <em>agreeing to.</em></h2>
-          </div>
-          <p>Please read these terms carefully before using our website or engaging our services.</p>
-        </div>
-
-        <div className="process-list">
-          {clauses.map(({ title, text }, i) => (
-            <article key={title}>
-              <span>{String(i + 1).padStart(2, "0")}</span>
-              <h3>{title}</h3>
-              <p>
-                {title === "Contact" ? (
-                  <>
-                    Questions about these terms should be directed to{" "}
-                    <a href="mailto:info@hukoconsults.com">info@hukoconsults.com</a>.
-                  </>
-                ) : (
-                  text
-                )}
-              </p>
-              <i>&rarr;</i>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <SiteFooter />
-    </main>
+    <LegalDocument
+      label="Terms & conditions"
+      title="The terms of working together."
+      description="The conditions that apply when you use this site or engage Huko Consults."
+      summary="These terms set out how the website may be used and the general expectations around our services."
+      clauses={clauses}
+    />
   );
 }

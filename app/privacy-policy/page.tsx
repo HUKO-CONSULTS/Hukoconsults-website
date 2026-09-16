@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { SiteHeader } from "../components/SiteHeader";
-import { SiteFooter } from "../components/SiteFooter";
+import { LegalDocument, type LegalClause } from "../components/LegalDocument";
 
 export const metadata: Metadata = {
   title: "Privacy policy",
@@ -8,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/privacy-policy" },
 };
 
-const clauses = [
+const clauses: LegalClause[] = [
   {
     title: "Information we collect",
     text: "We collect information you provide directly to us, such as your name, email address, company name, phone number, and project details when you fill out our contact form or communicate with us.",
@@ -27,54 +26,18 @@ const clauses = [
   },
   {
     title: "Contact",
-    isContact: true,
+    contact: true,
   },
 ];
 
 export default function PrivacyPolicyPage() {
   return (
-    <main>
-      <SiteHeader />
-      <section className="inner-hero">
-        <div className="hero-grid" />
-        <div>
-          <p className="eyebrow"><span /> Legal</p>
-          <h1>Privacy policy</h1>
-          <p>How Huko Consults collects, uses, and protects your personal information. Last updated: 14 September 2026.</p>
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow dark"><span /> Your data</p>
-            <h2>How we <em>protect it.</em></h2>
-          </div>
-          <p>A straightforward look at what we collect, why, and how it&rsquo;s kept safe.</p>
-        </div>
-
-        <div className="process-list">
-          {clauses.map(({ title, text, isContact }, i) => (
-            <article key={title}>
-              <span>{String(i + 1).padStart(2, "0")}</span>
-              <h3>{title}</h3>
-              <p>
-                {isContact ? (
-                  <>
-                    If you have questions about this privacy policy, please contact us at{" "}
-                    <a href="mailto:info@hukoconsults.com">info@hukoconsults.com</a>.
-                  </>
-                ) : (
-                  text
-                )}
-              </p>
-              <i>&rarr;</i>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <SiteFooter />
-    </main>
+    <LegalDocument
+      label="Privacy policy"
+      title="Your privacy matters."
+      description="A straightforward explanation of the information we collect and how we handle it."
+      summary="We only collect the details needed to respond to your enquiry and deliver our services. We do not sell your personal information."
+      clauses={clauses}
+    />
   );
 }

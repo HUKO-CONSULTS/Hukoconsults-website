@@ -7,8 +7,8 @@ import { InnovationField } from "./components/InnovationField";
 
 const services = [
   { title: "Web & Mobile Apps", text: "We build fast, user-friendly web and mobile apps that work seamlessly across every device.", image: "/project-bookbite.png", alt: "BookBite ecommerce website displayed on a desktop browser" },
-  { title: "UX Design", text: "We turn complex ideas into simple, intuitive digital experiences.", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=75", alt: "Team collaborating around a table during a planning session" },
-  { title: "Business Growth", text: "We help you improve sales, reach more customers and build a clear plan for growth.", image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=75", alt: "Business team reviewing a growth plan in a meeting" },
+  { title: "UX Design", text: "We turn complex ideas into simple, intuitive digital experiences.", image: "/ugandan-ux-design.png", alt: "Ugandan product designers collaborating around a laptop and whiteboard" },
+  { title: "Business Growth", text: "We help you improve sales, reach more customers and build a clear plan for growth.", image: "/ugandan-business-growth.png", alt: "Ugandan business team reviewing a digital growth strategy" },
 ];
 
 export const metadata: Metadata = {
