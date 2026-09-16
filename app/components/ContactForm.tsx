@@ -2,42 +2,54 @@
 
 import { useState, useRef } from "react";
 import { ArrowUpRight } from "lucide-react";
-import emailjs from '@emailjs/browser';
 
 export function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
+  const openedAt = useRef(Date.now());
   const [formStatus, setFormStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
-
- 
-  const EMAILJS_SERVICE_ID = "service_5o38aeq";
-  const EMAILJS_TEMPLATE_ID = "template_2oltcdj"; 
-  const EMAILJS_PUBLIC_KEY = "e6vyXpgrY_GsZjCod";
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
     if (!formRef.current) return;
 
+    const formData = new FormData(formRef.current);
+
+    // Bots commonly fill fields that a real visitor cannot see. Do not send these submissions.
+    if (String(formData.get("_honey") || "").trim()) {
+      setFormStatus("success");
+      formRef.current.reset();
+      return;
+    }
+
+    if (Date.now() - openedAt.current < 2500) {
+      setFormStatus("error");
+      setErrorMessage("Please take a moment to review your message, then try again.");
+      return;
+    }
+
+    formData.set("_subject", "New Huko Consults website enquiry");
+    formData.set("_template", "table");
+    formData.delete("_honey");
     setFormStatus("loading");
     setErrorMessage("");
 
     try {
-      const result = await emailjs.sendForm(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        EMAILJS_PUBLIC_KEY
-      );
+      const result = await fetch("https://formsubmit.co/ajax/info@hukoconsults.com", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: formData,
+      });
 
-      if (result.status === 200) {
+      if (result.ok) {
         setFormStatus("success");
         formRef.current.reset();
       } else {
         throw new Error("Failed to send");
       }
     } catch (error) {
-      console.error("EmailJS Error:", error);
+      console.error("Contact form error:", error);
       setFormStatus("error");
       setErrorMessage("Sorry, we couldn't send your message. Please try again or contact us directly.");
     }
@@ -46,12 +58,19 @@ export function ContactForm() {
   return (
     <div className="contact-form-wrapper">
       <form className="contact-form" ref={formRef} onSubmit={handleSubmit}>
+        <label className="form-honeypot" aria-hidden="true">
+          Leave this field empty
+          <input name="_honey" type="text" tabIndex={-1} autoComplete="off" />
+        </label>
         <div className="form-row">
           <label>
             Full name
             <input 
               name="name" 
               required 
+              minLength={2}
+              maxLength={80}
+              autoComplete="name"
               placeholder="Your name" 
               disabled={formStatus === "loading"}
             />
@@ -62,6 +81,8 @@ export function ContactForm() {
               name="email" 
               type="email" 
               required 
+              maxLength={120}
+              autoComplete="email"
               placeholder="you@company.com" 
               disabled={formStatus === "loading"}
             />
@@ -73,6 +94,8 @@ export function ContactForm() {
             <input 
               name="company" 
               placeholder="Company name" 
+              maxLength={100}
+              autoComplete="organization"
               disabled={formStatus === "loading"}
             />
           </label>
@@ -82,6 +105,9 @@ export function ContactForm() {
               name="phone" 
               type="tel" 
               placeholder="+256..." 
+              pattern="[+0-9() -]{7,24}"
+              maxLength={24}
+              autoComplete="tel"
               disabled={formStatus === "loading"}
             />
           </label>
@@ -92,9 +118,15 @@ export function ContactForm() {
             name="message" 
             required 
             rows={6} 
+            minLength={20}
+            maxLength={2500}
             placeholder="What would you like to create?" 
             disabled={formStatus === "loading"}
           />
+        </label>
+        <label className="contact-consent">
+          <input type="checkbox" name="consent" value="agreed" required />
+          <span>By submitting, you agree to our <a href="/privacy-policy">Privacy Policy</a>.</span>
         </label>
         <button 
           className="button button-red" 
@@ -104,7 +136,7 @@ export function ContactForm() {
           {formStatus === "loading" ? "Sending..." : "Send enquiry"}
           <ArrowUpRight size={17} />
         </button>
-        <p className="form-note">Your message will be sent directly to info@hukoconsults.com.</p>
+        <p className="form-note">Your message is sent securely to info@hukoconsults.com. We use a honeypot and timing check to reduce spam.</p>
       </form>
 
       {/* Success Message */}
@@ -178,6 +210,26 @@ export function ContactForm() {
           color: #888;
           font-size: 0.8rem;
         }
+
+        .contact-consent {
+          display: flex;
+          align-items: center;
+          gap: 0.6rem;
+          font-size: 0.85rem;
+          color: #444;
+        }
+
+        .contact-consent input {
+          width: 16px;
+          height: 16px;
+          accent-color: #2fa3f1;
+        }
+
+        .contact-consent a {
+          color: #2fa3f1;
+        }
+
+        .form-honeypot { position:absolute !important; left:-10000px !important; width:1px !important; height:1px !important; overflow:hidden !important; }
 
         .contact-form input,
         .contact-form textarea {

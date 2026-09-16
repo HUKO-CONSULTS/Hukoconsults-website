@@ -1,8 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, Gauge, Lightbulb, ShieldCheck, Target, Zap } from "lucide-react";
 import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
 import { InnovationField } from "../components/InnovationField";
+
+export const metadata: Metadata = {
+  title: "About us",
+  description: "Meet Huko Consults, a Kampala-based team building clear and reliable technology for businesses in Africa and around the world.",
+  alternates: { canonical: "/about" },
+};
 
 export default function AboutPage() {
   return (

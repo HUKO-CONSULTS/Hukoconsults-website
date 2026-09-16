@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Camera, Mail, MapPin, MessageCircle, Music2, Phone, Play } from "lucide-react";
+import { business } from "../lib/business";
 
 function XIcon({ size = 19, strokeWidth = 1.8 }: { size?: number; strokeWidth?: number }) {
   return (
@@ -55,27 +56,33 @@ export function SiteFooter() {
           <h3>Explore</h3>
           <Link href="/">Home</Link>
           <Link href="/services">Services</Link>
+          <Link href="/projects">Projects</Link>
           <Link href="/about">About us</Link>
-          <Link href="/contact">Get started</Link>
+          <Link href="/contact">Start your project</Link>
         </div>
         <div className="footer-column footer-contact">
           <h3>Get in touch</h3>
-          <a href="tel:+256758033100">
-            <Phone size={17} /> +256 758 033 100
+          <a href={`tel:${business.phoneHref}`}>
+            <Phone size={17} /> {business.phoneDisplay}
           </a>
           <a href="https://wa.me/256767625461" target="_blank" rel="noreferrer">
             <MessageCircle size={17} /> +256 767 625 461
           </a>
-          <a href="mailto:info@hukoconsults.com">
-            <Mail size={17} /> info@hukoconsults.com
+          <a href={`mailto:${business.email}`}>
+            <Mail size={17} /> {business.email}
           </a>
         </div>
         <div className="footer-column footer-visit">
           <h3>Visit us</h3>
-          <p className="footer-address"><MapPin size={18} /> Kampala, Uganda<br />Building for Africa and the world.</p>
+          <a className="footer-address" href={business.directionsUrl} target="_blank" rel="noopener noreferrer"><MapPin size={18} /> {business.shortAddress}</a>
           <h3 className="footer-mini-title">Availability</h3>
-          <p>Monday–Friday<br />8:00 AM–6:00 PM EAT</p>
+          <p>{business.hours}<br />Call ahead for holiday hours.</p>
         </div>
+      </div>
+      <div className="footer-legal">
+        <Link href="/privacy-policy">Privacy policy</Link>
+        <Link href="/terms">Terms &amp; conditions</Link>
+        <Link href="/cookies">Cookies</Link>
       </div>
       <div className="footer-bottom">
         <span>© 2026 HukoConsults. All rights reserved.</span>

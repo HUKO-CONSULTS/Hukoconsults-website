@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { SiteHeader } from "./components/SiteHeader";
@@ -5,10 +6,16 @@ import { SiteFooter } from "./components/SiteFooter";
 import { InnovationField } from "./components/InnovationField";
 
 const services = [
-  { title: "Web & Mobile Apps", text: "We build fast, user-friendly web and mobile apps that work seamlessly across every device.", image: "/home-web-apps-v2.png" },
-  { title: "UX Design", text: "We turn complex ideas into simple, intuitive digital experiences.", image: "/home-ux-design-v2.png" },
-  { title: "Business Growth", text: "We help you improve sales, reach more customers and build a clear plan for growth.", image: "/service-sales.png" },
+  { title: "Web & Mobile Apps", text: "We build fast, user-friendly web and mobile apps that work seamlessly across every device.", image: "/project-bookbite.png", alt: "BookBite ecommerce website displayed on a desktop browser" },
+  { title: "UX Design", text: "We turn complex ideas into simple, intuitive digital experiences.", image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=75", alt: "Team collaborating around a table during a planning session" },
+  { title: "Business Growth", text: "We help you improve sales, reach more customers and build a clear plan for growth.", image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=75", alt: "Business team reviewing a growth plan in a meeting" },
 ];
+
+export const metadata: Metadata = {
+  title: "Software, digital products & growth systems in Kampala",
+  description: "Huko Consults helps ambitious businesses build practical software, customer-friendly digital products and measurable growth systems.",
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (
@@ -22,7 +29,7 @@ export default function Home() {
           <h1>Building intelligent<br /><em>software</em> for<br />ambitious businesses.</h1>
           <p className="hero-lead">Huko Consults delivers custom software, digital experiences and scalable growth solutions.</p>
           <div className="hero-actions">
-            <Link className="button button-red" href="/contact">Be strategic. Build what’s next <ArrowUpRight size={17} /></Link>
+            <Link className="button button-red" href="/contact">Start your project <ArrowUpRight size={17} /></Link>
             <Link className="text-link" href="/services">Our solutions <ArrowRight size={16} /></Link>
           </div>
         </div>
@@ -42,9 +49,9 @@ export default function Home() {
           <p>We combine design, technology and strategy to solve real business challenges.</p>
         </div>
         <div className="service-grid three">
-          {services.map(({ title, text, image }) => (
+          {services.map(({ title, text, image, alt }) => (
             <article className="service-card" key={title}>
-              <div className="home-service-image"><img src={image} alt={`${title} visual`} /></div>
+              <div className="home-service-image"><img src={image} alt={alt} width="1200" height="800" loading="lazy" decoding="async" /></div>
               <h3>{title}</h3><p>{text}</p>
               <Link href="/services">Explore capability <ArrowUpRight size={16} /></Link>
             </article>
@@ -65,7 +72,7 @@ export default function Home() {
 
       <section className="page-cta">
         <p className="eyebrow"><span /> Your next move</p><h2>Ready to bring your ideas to life? <em>Let’s discuss your goals.</em></h2>
-        <Link className="button light-button" href="/contact">Begin a project <ArrowUpRight size={17} /></Link>
+        <Link className="button light-button" href="/contact">Start your project <ArrowUpRight size={17} /></Link>
       </section>
       <SiteFooter />
     </main>

@@ -1,8 +1,16 @@
+import type { Metadata } from "next";
 import { SiteHeader } from "../components/SiteHeader";
 import { SiteFooter } from "../components/SiteFooter";
 import { ContactForm } from "../components/ContactForm";
 import { ArrowUpRight, Clock3, Mail, MessageCircle, Phone, Route, ShieldCheck } from "lucide-react";
 import { InnovationField } from "../components/InnovationField";
+import { business } from "../lib/business";
+
+export const metadata: Metadata = {
+  title: "Contact us",
+  description: "Visit Huko Consults at Ivory Plaza on Wilson Road in Kampala, or contact our team to discuss your next digital project.",
+  alternates: { canonical: "/contact" },
+};
 
 export default function ContactPage() {
   return (
@@ -17,14 +25,27 @@ export default function ContactPage() {
         <div className="contact-intro">
           <p className="eyebrow"><span /> Contact us</p><h2>Talk with our <em>team.</em></h2><p>You can contact us with a new idea, a problem or a project. Choose the easiest way to reach us.</p>
           <div className="contact-direct">
-            <a href="mailto:info@hukoconsults.com"><small><Mail size={15} /> Email us</small>info@hukoconsults.com <ArrowUpRight size={16} /></a>
-            <a href="tel:+256758033100"><small><Phone size={15} /> Call us</small>+256 758 033 100 <ArrowUpRight size={16} /></a>
+            <a href={`mailto:${business.email}`}><small><Mail size={15} /> Email us</small>{business.email} <ArrowUpRight size={16} /></a>
+            <a href={`tel:${business.phoneHref}`}><small><Phone size={15} /> Call us</small>{business.phoneDisplay} <ArrowUpRight size={16} /></a>
             <a href="https://wa.me/256767625461" target="_blank" rel="noreferrer"><small><MessageCircle size={15} /> WhatsApp</small>+256 767 625 461 <ArrowUpRight size={16} /></a>
           </div>
         </div>
         <ContactForm />
       </section>
       <section className="contact-notes"><article><Clock3 size={25} /><h3>Quick reply</h3><p>We aim to reply within one working day.</p></article><article><ShieldCheck size={25} /><h3>Your idea is safe</h3><p>We keep your project information private.</p></article><article><Route size={25} /><h3>A clear plan</h3><p>We will explain what should happen next and how we can help.</p></article></section>
+      <section className="location-section">
+        <div className="location-copy">
+          <p className="eyebrow"><span /> Visit Huko Consults</p>
+          <h2>Find us at <em>Ivory Plaza.</em></h2>
+          <address>{business.address}</address>
+          <p><strong>Opening hours:</strong> {business.hours}</p>
+          <p>Call ahead if you are visiting near closing time or on a public holiday.</p>
+          <a className="button button-red" href={business.directionsUrl} target="_blank" rel="noopener noreferrer">Get directions <ArrowUpRight size={17} /></a>
+        </div>
+        <div className="map-frame">
+          <iframe title="Map to Huko Consults at Ivory Plaza, Kampala" src={business.mapEmbedUrl} loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+        </div>
+      </section>
       <SiteFooter />
     </main>
   );

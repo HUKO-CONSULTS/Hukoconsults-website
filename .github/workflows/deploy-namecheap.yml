@@ -30,7 +30,11 @@ jobs:
           test -f ./out/services/index.html
           test -f ./out/about/index.html
           test -f ./out/contact/index.html
+          test -f ./out/projects/index.html
+          test -f ./out/404.html
           test -f ./out/.htaccess
+          test -f ./out/sitemap.xml
+          test -f ./out/robots.txt
 
       - name: Upload to Namecheap
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
