@@ -37,7 +37,7 @@ export default function AboutPage() {
       </section>
       <section className="intelligence">
         <div className="team-art"><div>HUKO</div><span>Ideas grow stronger together.</span></div>
-        <div><p className="eyebrow"><span /> How we work</p><h2>Better ideas come from <em>working together.</em></h2><p>We listen to our clients, share ideas and work as one team from start to finish.</p><div className="stat-grid"><b>150+<small>Projects shaped</small></b><b>24/7<small>Global support</small></b><b>12+<small>Specialist skills</small></b><b>98%<small>Client retention</small></b></div></div>
+        <div><p className="eyebrow"><span /> How we work</p><h2>Better ideas come from <em>working together.</em></h2><p>We listen to our clients, share ideas and work as one team from start to finish.</p><div className="stat-grid"><b>5+<small>Projects shipped</small></b><b>24/7<small>Global support</small></b><b>12+<small>Specialist skills</small></b><b>98%<small>Client retention</small></b></div></div>
       </section>
       <section className="section integrity">
         <div><p className="eyebrow dark"><span /> Our promise</p><h2>Technology you can <em>trust.</em></h2><p>We build carefully, speak clearly and focus on work that gives you real value.</p></div>

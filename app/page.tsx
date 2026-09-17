@@ -6,9 +6,9 @@ import { SiteFooter } from "./components/SiteFooter";
 import { InnovationField } from "./components/InnovationField";
 
 const services = [
-  { title: "Web & Mobile Apps", text: "We build fast, user-friendly web and mobile apps that work seamlessly across every device.", image: "/project-bookbite.png", alt: "BookBite ecommerce website displayed on a desktop browser" },
-  { title: "UX Design", text: "We turn complex ideas into simple, intuitive digital experiences.", image: "/ugandan-ux-design.png", alt: "Ugandan product designers collaborating around a laptop and whiteboard" },
-  { title: "Business Growth", text: "We help you improve sales, reach more customers and build a clear plan for growth.", image: "/ugandan-business-growth.png", alt: "Ugandan business team reviewing a digital growth strategy" },
+  { title: "Web & Mobile Apps", text: "We build fast, user-friendly web and mobile apps that work seamlessly across every device.", image: "/project-bookbite.png", alt: "BookBite ecommerce website displayed on a desktop browser", cta: "Explore capability" },
+  { title: "UI/UX Design", text: "We design intuitive digital experiences that make products easier to use—and businesses easier to choose.", image: "/ugandan-ui-ux-design.png", alt: "Ugandan UI and UX designers reviewing a mobile app prototype, wireframes and a design system", cta: "Explore UI/UX" },
+  { title: "Business Growth", text: "We help you improve sales, reach more customers and build a clear plan for growth.", image: "/ugandan-business-growth.png", alt: "Ugandan business team reviewing a digital growth strategy", cta: "Explore capability" },
 ];
 
 export const metadata: Metadata = {
@@ -49,11 +49,11 @@ export default function Home() {
           <p>We combine design, technology and strategy to solve real business challenges.</p>
         </div>
         <div className="service-grid three">
-          {services.map(({ title, text, image, alt }) => (
+          {services.map(({ title, text, image, alt, cta }) => (
             <article className="service-card" key={title}>
               <div className="home-service-image"><img src={image} alt={alt} width="1200" height="800" loading="lazy" decoding="async" /></div>
               <h3>{title}</h3><p>{text}</p>
-              <Link href="/services">Explore capability <ArrowUpRight size={16} /></Link>
+              <Link href="/services">{cta} <ArrowUpRight size={16} /></Link>
             </article>
           ))}
         </div>

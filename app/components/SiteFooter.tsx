@@ -19,11 +19,11 @@ function LinkedInIcon({ size = 19, strokeWidth = 1.8 }: { size?: number; strokeW
 }
 
 const socials = [
-  { label: "X / Twitter", href: "https://x.com/hukoconsults", Icon: XIcon, bgColor: "#000", hoverBg: "#1a1a1a" },
-  { label: "Instagram", href: "https://www.instagram.com/hukoconsults/", Icon: Camera, bgColor: "#E4405F", hoverBg: "#F77737" },
-  { label: "TikTok", href: "https://www.tiktok.com/@hukoconsults", Icon: Music2, bgColor: "#000000", hoverBg: "#69C9D0" },
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/hukoconsults/", Icon: LinkedInIcon, bgColor: "#0A66C2", hoverBg: "#0077B5" },
-  { label: "YouTube", href: "https://www.youtube.com/@hukoconsult", Icon: Play, bgColor: "#FF0000", hoverBg: "#CC0000" },
+  { label: "X / Twitter", href: "https://x.com/hukoconsults", Icon: XIcon, className: "social-x" },
+  { label: "Instagram", href: "https://www.instagram.com/hukoconsults/", Icon: Camera, className: "social-instagram" },
+  { label: "TikTok", href: "https://www.tiktok.com/@hukoconsults", Icon: Music2, className: "social-tiktok" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/hukoconsults/", Icon: LinkedInIcon, className: "social-linkedin" },
+  { label: "YouTube", href: "https://www.youtube.com/@hukoconsult", Icon: Play, className: "social-youtube" },
 ];
 
 export function SiteFooter() {
@@ -37,7 +37,7 @@ export function SiteFooter() {
           </Link>
           <p>We combine technology, design and proven growth systems to help ambitious businesses build better products and increase revenue.</p>
           <div className="footer-socials" aria-label="HukoConsults social media">
-            {socials.map(({ label, href, Icon, bgColor, hoverBg }) => (
+            {socials.map(({ label, href, Icon, className }) => (
               <a
                 key={label}
                 href={href}
@@ -45,7 +45,7 @@ export function SiteFooter() {
                 rel="noreferrer"
                 aria-label={label}
                 title={label}
-                style={{ background: bgColor, borderColor: bgColor }}
+                className={`footer-social ${className}`}
               >
                 <Icon size={19} strokeWidth={1.8} />
               </a>
@@ -76,7 +76,7 @@ export function SiteFooter() {
           <h3>Visit us</h3>
           <a className="footer-address" href={business.directionsUrl} target="_blank" rel="noopener noreferrer"><MapPin size={18} /> {business.shortAddress}</a>
           <h3 className="footer-mini-title">Availability</h3>
-          <p>{business.hours}<br />Call ahead for holiday hours.</p>
+          <p>{business.hours}</p>
         </div>
       </div>
       <div className="footer-legal">

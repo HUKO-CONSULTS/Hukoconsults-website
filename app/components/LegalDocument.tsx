@@ -62,7 +62,7 @@ export function LegalDocument({ label, title, description, summary, clauses }: L
                 <p>
                   {contact ? (
                     <>
-                      Questions about this {label.toLowerCase()} can be sent to{" "}
+                      If you have questions about this document, please email{" "}
                       <a href="mailto:info@hukoconsults.com">info@hukoconsults.com</a>.
                     </>
                   ) : text}

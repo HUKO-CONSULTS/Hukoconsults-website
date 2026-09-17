@@ -1,11 +1,11 @@
 export const business = {
   name: "Huko Consults",
   email: "info@hukoconsults.com",
-  phoneDisplay: "0772 883 139",
+  phoneDisplay: "+256 772 883 139",
   phoneHref: "+256772883139",
   address: "Basement Floor, Shop B.19, Ivory Plaza, Wilson Rd, Kampala, Uganda",
   shortAddress: "Shop B.19, Ivory Plaza, Wilson Road, Kampala",
-  hours: "Monday–Saturday, 9:00 AM–4:00 PM EAT",
+  hours: "Monday - Saturday, 9:00 AM - 4:00 PM (EAT)",
   directionsUrl:
     "https://www.google.com/maps/dir/?api=1&destination=Basement+Floor%2C+Shop+B.19%2C+Ivory+Plaza%2C+Wilson+Rd%2C+Kampala%2C+Uganda",
   mapEmbedUrl:

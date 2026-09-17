@@ -1,20 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { ArrowUpRight } from "lucide-react";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
   
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-  
-  const active = (href: string) => mounted && pathname === href;
+  // Static exports are served with trailing slashes (for example, /services/),
+  // while navigation links use their clean route names. Normalise both so the
+  // current-page highlight works consistently on every route.
+  const currentPath = pathname.replace(/\/+$/, "") || "/";
+  const active = (href: string) => currentPath === href;
   return (
     <nav className="nav-shell" aria-label="Main navigation">
       <Link className="brand" href="/" aria-label="HukoConsults home">
