@@ -65,8 +65,8 @@ export function SiteFooter() {
           <a href={`tel:${business.phoneHref}`}>
             <Phone size={17} /> {business.phoneDisplay}
           </a>
-          <a href="https://wa.me/256767625461" target="_blank" rel="noreferrer">
-            <MessageCircle size={17} /> +256 767 625 461
+          <a href="https://wa.me/256772883139" target="_blank" rel="noreferrer">
+            <MessageCircle size={17} /> +256 772 883 139
           </a>
           <a href={`mailto:${business.email}`}>
             <Mail size={17} /> {business.email}

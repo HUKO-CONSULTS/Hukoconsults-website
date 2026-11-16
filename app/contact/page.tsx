@@ -27,7 +27,7 @@ export default function ContactPage() {
           <div className="contact-direct">
             <a href={`mailto:${business.email}`}><small><Mail size={15} /> Email us</small>{business.email} <ArrowUpRight size={16} /></a>
             <a href={`tel:${business.phoneHref}`}><small><Phone size={15} /> Call us</small>{business.phoneDisplay} <ArrowUpRight size={16} /></a>
-            <a href="https://wa.me/256767625461" target="_blank" rel="noreferrer"><small><MessageCircle size={15} /> WhatsApp</small>+256 767 625 461 <ArrowUpRight size={16} /></a>
+            <a href="https://wa.me/256772883139" target="_blank" rel="noreferrer"><small><MessageCircle size={15} /> WhatsApp</small>+256 772 883 139 <ArrowUpRight size={16} /></a>
           </div>
         </div>
         <ContactForm />
